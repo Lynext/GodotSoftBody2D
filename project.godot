@@ -31,10 +31,6 @@ settings/fps/force_fps=75
 
 window/vsync/use_vsync=false
 
-[editor_plugins]
-
-enabled=PoolStringArray( "bordered-polygon-2d" )
-
 [input]
 
 leftClick={
