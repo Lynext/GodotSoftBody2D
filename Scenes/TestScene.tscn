@@ -22,7 +22,6 @@ void fragment()
 		COLOR = texture(TEXTURE,UV);
 	}
 }"
-custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )

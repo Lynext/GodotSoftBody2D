@@ -43,14 +43,14 @@ func findCentroid():
 	return cent
 
 func getPoint(i):
-	var point_count = curve.get_point_count()
-	i = wrapi(i, 0, point_count - 1)
+	var pointCount = curve.get_point_count()
+	i = wrapi(i, 0, pointCount - 1)
 	return curve.get_point_position(i)
 
 func getSpline(i):
-	var last_point = getPoint(i - 1)
-	var next_point = getPoint(i + 1)
-	var spline = last_point.direction_to(next_point) * splineLength
+	var lastPoint = getPoint(i - 1)
+	var nextPoint = getPoint(i + 1)
+	var spline = lastPoint.direction_to(nextPoint) * splineLength
 	return spline
 
 func updateSprite ():
@@ -172,16 +172,17 @@ func resetBlob ():
 	update()
 
 
+# Circumfrence Slider
 func _on_HSlider_value_changed(value):
 	circumfrenceMultiplier = value
 	circumfrence = radius * 2.0 * PI * circumfrenceMultiplier
 	length = circumfrence * 1.15 / float(points)
 
-
+# Gravity Slider
 func _on_HSlider2_value_changed(value):
 	gravity.y = value
 
-
+# Area Slider
 func _on_HSlider3_value_changed(value):
 	radius = value
 	area = radius * radius * PI
@@ -189,7 +190,7 @@ func _on_HSlider3_value_changed(value):
 	length = circumfrence * 1.15 / float(points)
 	print(area)
 
-
+# Points Slider
 func _on_HSlider4_value_changed(value):
 	points = value
 	area = radius * radius * PI
